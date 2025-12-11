@@ -1,121 +1,380 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abbie Lin | Frontend Developer × UI/UX Designer</title>
 
-  <!-- 導入 CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
 
-  <title>Abbie Portfolio</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <div class="hero">
+  <!-- ===========================
+        Hero
+  ============================ -->
+  <header class="hero">
     <h1>Abbie Lin</h1>
-    <p>Frontend Developer × UI/UX Designer</p>
-    <p>打造直覺、溫度與美感兼具的數位產品</p>
-  </div>
+    <p class="role">Frontend Developer × UI/UX Designer</p>
+    <p class="sub">打造直覺、溫度與美感兼具的數位產品</p>
 
-  <h2 class="section-title">Frontend Projects</h2>
-  <div class="grid">
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#contact" class="btn outline">Contact Me</a>
+    </div>
+  </header>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581276879432-15a19d654956?w=800" alt="Frontend Project">
-      <div class="card-content">
-        <h3 class="card-title">Personal Website</h3>
-        <p class="card-desc">使用 HTML/CSS/RWD 製作的前端個人網站首頁。</p>
+  <section class="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-wrapper">
+      <div class="about-photo">
+        <img src="images/abbie.jpg" alt="Abbie portrait">
+      </div>
+
+      <div class="about-text">
+        <h3>Hi ! I'm Abbie｜ 林艾彤</h3>
+        <p>
+          我是 Abbie，具備<strong>網頁設計、前端開發與心理學背景三項能力</strong>，擅長將視覺設計與人因思維整合，打造兼具互動、情緒感受與使用者需求的網頁體驗，使作品在介面上不只美觀，也能真正貼近使用者行為。
+        </p>
+
+        <p>
+          熟悉 HTML、CSS、RWD、JavaScript，能獨立完成從設計稿到切版、互動效果實作的完整流程。
+        </p>
+
+        <p>
+          結訓於 <strong>中彰投分署全端工程師青年專班</strong>，理解 Laravel、PHP、API 串接等網站架構與跨團隊協作方式，並持續於六角學院進修 React、Node.js，強化前端框架與元件化思維。
+        </p>
+
+        <p>
+          我也具備心理學背景，自主學習心理學與統計分析，使我在設計上能以 <strong>同理心 × 資料導向</strong>進行決策。參與多場心理學工作坊，也培養了觀察、理解與分析使用者需求的能力。
+        </p>
+
+        <p>
+          此外，我經營個人插畫品牌 <strong>Abbie_draw</strong>，擅長視覺整合、排版與品牌風格設計，能將藝術美感與前端技術融合，打造兼具溫度與細節的數位作品。
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1527443224154-9c9ad6fde63c?w=800" alt="JS App">
-      <div class="card-content">
-        <h3 class="card-title">JS Interactive App</h3>
-        <p class="card-desc">以 JavaScript 實作互動功能，提升使用者體驗。</p>
-      </div>
-    </div>
+  <!-- ===========================
+        Skills
+  ============================ -->
+  <section id="skills" class="skills-section">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="ShopUI">
-      <div class="card-content">
-        <h3 class="card-title">E-commerce Layout</h3>
-        <p class="card-desc">仿電商平台切版，練習 CSS Grid / Flexbox。</p>
-      </div>
-    </div>
-
-  </div>
-
-  <h2 class="section-title">UI/UX Case Studies</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=900" alt="UI Design">
-      <div class="card-content">
-        <h3 class="card-title">App Redesign</h3>
-        <p class="card-desc">重新設計 App 介面，提升視覺階層與操作流程。</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600172454132-52aa4b2a2777?w=900" alt="UX Research">
-      <div class="card-content">
-        <h3 class="card-title">UX Research Report</h3>
-        <p class="card-desc">使用者訪談、旅程地圖、痛點分析與設計建議。</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=900" alt="Wireframe">
-      <div class="card-content">
-        <h3 class="card-title">Wireframe & Prototype</h3>
-        <p class="card-desc">以 Figma 建立中高保真原型，驗證核心流程。</p>
-      </div>
-    </div>
-
-  </div>
-
-  <h2 class="section-title">Illustration Works</h2>
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" alt="Illustration">
-      <div class="card-content">
-        <h3 class="card-title">Character Design</h3>
-        <p class="card-desc">以療癒系風格創作的角色插畫。</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900" alt="Artwork">
-      <div class="card-content">
-        <h3 class="card-title">Art Poster</h3>
-        <p class="card-desc">使用 Procreate 完成的情緒海報系列。</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900" alt="Branding">
-      <div class="card-content">
-        <h3 class="card-title">Brand Illustration</h3>
-        <p class="card-desc">品牌視覺延伸插畫，強化整體風格一致性。</p>
-      </div>
-    </div>
-
-  </div>
-
-  <footer class="site-footer">
-    <p class="footer-name">© 2025 Abbie Lin · Frontend Developer × UI/UX Designer</p>
-    <p class="footer-links">
-      <a href="mailto:yourmail@example.com">Email</a> ·
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a> ·
-      <a href="https://github.com/" target="_blank">GitHub</a>
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">
+      融合設計感、邏輯思維與心理洞察，形成獨特的跨域前端整合能力。
     </p>
+
+    <div class="skills-grid top-row">
+      <!-- Skill 1 -->
+      <div class="skill-card">
+        <h3>Frontend Development</h3>
+        <p>HTML / CSS / JavaScript (ES6+) / RWD<br>
+          React（基礎） / API 串接 / Git<br>
+          Web Performance / Layout Optimization
+        </p>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="skill-card">
+        <h3>UI/UX Design</h3>
+        <p>Figma / Wireframe / Prototype / UI System<br>
+          User Flow / Information Architecture<br>
+          Usability Analysis / Visual Hierarchy
+        </p>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="skill-card">
+        <h3>Psychology × UX</h3>
+        <p>使用者訪談與需求探索<br>
+          Emotional Design（情緒設計）<br>
+          行為觀察、痛點分析、資料導向決策
+        </p>
+      </div>
+    </div>
+
+
+    <div class="skills-grid bottom-row">
+      <!-- Skill 4 -->
+      <div class="skill-card wide">
+        <h3>Brand & Illustration</h3>
+        <p>Branding / Visual Storytelling<br>
+          Procreate 插畫、角色設計、情緒氛圍創作<br>
+          Icon / Banner 品牌視覺延伸
+        </p>
+      </div>
+
+      <!-- Skill 5 -->
+      <div class="skill-card wide">
+        <h3>Tools & Workflow</h3>
+        <p>Git / GitHub / VS Code<br>
+          Figma / Notion / Miro<br>
+          Illustrator / Photoshop / Agile Flow
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===========================
+        UI/UX ＆ Featured Projects
+  ============================ -->
+
+
+  <section id="projects" class="featured">
+
+    <h2 class="section-title">Frontend Projects × UI/UX Driven</h2>
+    <p class="section-subtitle">
+      結合心理學、使用者體驗與前端技術，創造更貼近情感與需求的產品。
+    </p>
+
+
+
+
+    <div class="grid">
+
+
+      <div class="card">
+        <img src="images/4.jpeg" alt="繪初 DrawOrigin 插畫教學品牌網站" />
+
+        <div class="card-content">
+
+          <div class="content-top">
+            <h3>繪初 DrawOrigin ｜插畫教學品牌網站</h3>
+            <p>Laravel 多頁式網站專案，包含 MVC 架構、Blade 模板拆分、前後端整合流程。</p>
+          </div>
+
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Laravel</span>
+            <span class="tag">Blade</span>
+            <span class="tag">MVC</span>
+          </div>
+
+          <a href="https://github.com/aitong0113/draworigin/tree/main" target="_blank" class="btn">查看作品</a>
+        </div>
+      </div>
+
+
+      <!-- Project 1: DogAge -->
+      <div class="card">
+        <img src="images/1.png" alt="DogAge App" />
+        <div class="card-content">
+          <div class="content-top">
+            <h3>DogAge｜JS 互動小工具</h3>
+            <p>以 JavaScript 製作的年齡換算工具，練習事件監聽、輸入驗證與動態 UI 呈現。</p>
+          </div>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">DOM</span>
+            <span class="tag">Event Listener</span>
+          </div>
+          <a href="https://aitong0113.github.io/VC-Day12/" target="_blank" class="btn">查看作品</a>
+        </div>
+      </div>
+
+      <!-- Project 2: Mood Weather App -->
+      <div class="card">
+        <img src="images/2.png" alt="Mood Weather App" />
+        <div class="card-content">
+          <div class="content-top">
+            <h3>今日心天氣｜情緒天氣 Web App</h3>
+            <p>依照心情切換主題的互動式 Web App，呈現溫度感 UI 與 RWD 動態效果。</p>
+          </div>
+          <div class="tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">RWD</span>
+          </div>
+          <a href="https://aitong0113.github.io/VC-Day21/" target="_blank" class="btn">查看作品</a>
+        </div>
+      </div>
+
+      <!-- Project 3: RWD Layout Showcase -->
+      <div class="card">
+        <img src="images/3.jpeg" alt="Layout Showcase" />
+        <div class="card-content">
+          <div class="content-top">
+            <h3>RWD Layout Showcase｜切版</h3>
+            <p>展示 14 種前端排版布局：Flex / Grid / Masonry，重視語意化 HTML 與排版結構。</p>
+          </div>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Flex/Grid</span>
+          </div>
+          <a href="https://aitong0113.github.io/RWD-1/" target="_blank" class="btn">查看作品</a>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </section>
+
+
+
+  <!-- ===========================
+        Illustration Section
+  ============================ -->
+  <section class="illustration">
+    <h2 class="section-title">Illustration Works</h2>
+    <p class="section-subtitle">
+      把情緒化作圖像，把故事藏進色彩裡。這些插畫記錄了我看世界的方式，也記錄了我自己。
+    </p>
+
+    <div class="masonry">
+      <div class="card">
+        <img src="images/01.jpeg" alt="Illustration">
+        <div class="card-content">
+          <h3>《草泥馬歪頭殺殺殺》</h3>
+          <p>以療癒系風格創作的角色插畫。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/02.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《你要買什麼呢～？》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/03.jpg" alt="Brand Illustration">
+        <div class="card-content">
+          <h3>《摩羯座》</h3>
+          <p>延伸品牌語言的視覺插畫。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/04.jpg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《每日時光》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="images/05.jpg" alt="Art Posters">
+        <div class="card-content">
+          <h3> 《微光棲息地》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/06.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《黑魔法雜貨店》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+            <div class="card">
+        <img src="images/07.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《雲之下的呼吸》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+
+
+            <div class="card">
+        <img src="images/09.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《貓湯屋》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+
+            <div class="card">
+        <img src="images/10.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《龍行虎步》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+
+            <div class="card">
+        <img src="images/11.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《貓語鳥語 插畫聯展》</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+
+            <div class="card">
+        <img src="images/12.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《阿公帶我出去玩》繪本創作</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+            <div class="card">
+        <img src="images/13.jpeg" alt="Art Posters">
+        <div class="card-content">
+          <h3>《丹妮的花》繪本聯展</h3>
+          <p>以情緒為主題的海報系列。</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- ===========================
+        Contact
+  ============================ -->
+<section id="contact" class="contact">
+  <h2 class="contact-title">
+    <span class="line"></span>
+    Contact
+    <span class="line"></span>
+  </h2>
+
+  <p class="contact-subtitle">
+    期待與你一起創造下一個有溫度的作品。
+  </p>
+
+  <div class="contact-links">
+    <a href="https://line.me/ti/p/iui71zPXUK" target="_blank">LINE</a>
+    <a href="mailto:aitong0113@gmail.com">Email</a>
+    <a href="https://github.com/aitong0113" target="_blank">GitHub</a>
+    <a href="https://www.instagram.com/abbie_draw" target="_blank">Instagram</a>
+  </div>
+
+</section>
+
+
+  <!-- ===========================
+        Footer
+  ============================ -->
+  <footer class="site-footer">
+    © 2025 Abbie Lin · Frontend Developer × UI/UX Designer
   </footer>
 
-  <!-- 導入 JS -->
-  <script src="script.js"></script>
-
 </body>
+
 </html>

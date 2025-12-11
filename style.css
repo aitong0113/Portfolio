@@ -1,99 +1,599 @@
-body {
+/* ============================================================
+   RESET
+============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p {
   margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+body {
   font-family: "Noto Sans TC", sans-serif;
-  background: #f7f9fc;
+  background: #f5f6f7;
   color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Hero */
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.hero h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-.hero p {
-  font-size: 18px;
-  color: #666;
+/* ============================================================
+   GLOBAL VARIABLES
+============================================================ */
+:root {
+  --radius: 16px;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  --primary: #a77a7a;
+  --text-light: #666;
+  --section-space: 80px;
 }
 
-/* Section title */
 .section-title {
-  margin: 60px 0 20px;
-  font-size: 28px;
   text-align: center;
-  color: #222;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 32px;
 }
 
-/* Grid */
-.grid {
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  padding: 120px 20px 100px;
+  text-align: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 12px;
+}
+
+.hero .role {
+  font-size: 20px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.hero .sub {
+  font-size: 17px;
+  color: #444;
+}
+
+.hero-buttons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about {
+  padding: var(--section-space) 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
 }
 
-/* Cards */
-.card {
-  background: white;
-  border-radius: 14px;
+.about-photo img {
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.about-text h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  color: #555;
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   SKILLS
+============================================================ */
+.skills-section {
+  padding: 80px 20px;
+  background: #f7f8fa;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 24px;
+  margin: 40px auto;
+  max-width: 1100px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
 }
-.card:hover {
+
+
+
+
+.skill-card p {
+  line-height: 1.75;
+  font-size: 15px;
+  margin-top: 8px;
+  color: #555;
+  text-align: center;
+}
+
+.skills-grid.top-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skills-grid.bottom-row {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-card {
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: 0.25s;
+  text-align: center;
+}
+
+.skill-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
 }
+
+@media (max-width: 900px) {
+  .skills-grid.top-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .skills-grid.bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid.top-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   FEATURED PROJECTS GRID
+============================================================ */
+
+
+.section-subtitle {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 32px;
+  color: #777;
+  max-width: 700px;
+  margin: -15px auto 40px;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   PROJECT CARD — 統一高度 + 標籤 + 按鈕貼底
+============================================================ */
+
+/* 父層 GRID（你原本已設定，但補充保險） */
+.featured .grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* 卡片基礎樣式 */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
+/* 內容區塊 */
 .card-content {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
 }
 
-.card-title {
+/* 上半內容（標題＋描述）固定彈性區塊 */
+.card-content .content-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 標題與段落 */
+.card-content h3 {
+  margin: 0;
   font-size: 18px;
-  margin: 0 0 6px;
-  color: #111;
-}
-.card-desc {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
+  font-weight: 700;
+  color: #333;
 }
 
-/* ===== Footer ===== */
+.card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 標籤區 */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tag {
+  background: #f2e6e7;
+  color: #b87a7c;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* 按鈕貼底 */
+.card-content .btn {
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 8px 20px;
+  font-size: 14px;
+  background: #b87a7c;
+  color: white;
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.card-content .btn:hover {
+  background: #9d6468;
+}
+
+/* RWD */
+@media (max-width: 480px) {
+  .section-subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+.featured {
+  padding: var(--section-space) 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Project Card（專門給 featured 用） */
+.card {
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content .content-top {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #f2e6e7;
+  color: #b87a7c;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Bottom Button 固定在最底部 */
+.card-content .btn {
+  margin-top: 16px;
+  align-self: flex-start;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* ============================================================
+   CASE STUDIES / ILLUSTRATIONS
+============================================================ */
+/* ================================
+   Illustration – Masonry Layout
+================================ */
+.masonry {
+  column-count: 3;            /* 3 欄瀑布流 */
+  column-gap: 24px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  gap: 3rem;
+}
+
+.masonry .card {
+  break-inside: avoid;       /* 防止卡片被切開 */
+  margin-bottom: 24px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* 圖片比例維持但可高可低 */
+.masonry img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* RWD：平板變 2 欄 */
+@media (max-width: 900px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+/* 手機：變一欄 */
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+.illustration .grid {
+  column-count: 3;          /* ⭐ 3 欄瀑布流 */
+  column-gap: 24px;
+}
+
+.illustration .card {
+  break-inside: avoid;      /* ⭐ 每張卡片不可被拆開 */
+  margin-bottom: 24px;
+}
+
+.illustration .card img {
+  width: 100%;
+  height: auto;             /* ⭐ 依照實際比例延伸，高度不被限制 */
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+
+
+@media (max-width: 900px) {
+  .illustration .grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .illustration .grid {
+    column-count: 1;
+  }
+
+
+}
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact {
+  padding: var(--section-space) 20px;
+  text-align: center;
+}
+
+.contact-links a {
+  margin: 0 10px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+.contact-links a:hover {
+  transform: translateY(-2px);
+  color: #b07c7c;
+}
+
+.contact-links a::after {
+  opacity: 0;
+  margin-left: 4px;
+  transition: 0.3s;
+}
+
+.contact-links a:hover::after {
+  opacity: 1;
+  margin-left: 8px;
+}
+/* Contact 區 */
+.contact {
+  text-align: center;
+  padding: 100px 20px 80px;
+}
+
+/* 中間文字左右加線條 */
+.contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+
+.contact-title .line {
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+  max-width: 120px;
+}
+
+/* 副標 */
+.contact-subtitle {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* 連結 */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 40px;
+}
+
+.contact-links a {
+  color: #b28c8c;
+  font-size: 1.05rem;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.contact-links a:hover {
+  color: #875f5f;
+  transform: translateY(-3px);
+}
+
+
+.contact-links a:hover::after {
+  width: 100%;
+}
+
+/* Footer note */
+.footer-note {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
 .site-footer {
   text-align: center;
-  padding: 40px 20px;
-  margin-top: 60px;
-  background: #ffffff;
-  color: #555;
-  border-top: 1px solid #e6e6e6;
-}
-
-.site-footer p {
-  margin: 6px 0;
+  padding: 30px 20px;
+  color: #777;
   font-size: 14px;
 }
 
-.footer-links a {
-  color: #4a6ee0; /* 藍色小點綴 */
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
+/* ============================================================
+   RWD TUNING
+============================================================ */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 16px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
 }
