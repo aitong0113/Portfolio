@@ -282,6 +282,7 @@ body {
   font-size: 18px;
   font-weight: 700;
   color: #333;
+  text-align: center;
 }
 
 .card-content p {
@@ -309,8 +310,8 @@ body {
 }
 
 /* 按鈕貼底 */
+
 .card-content .btn {
-  align-self: flex-start;
   margin-top: 18px;
   padding: 8px 20px;
   font-size: 14px;
@@ -318,6 +319,9 @@ body {
   color: white;
   border-radius: 6px;
   transition: 0.25s;
+  width: 130px;
+  text-align: center;
+  align-self: center;
 }
 
 .card-content .btn:hover {
@@ -370,6 +374,7 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-content .content-top {
@@ -396,14 +401,42 @@ body {
 }
 
 /* Bottom Button 固定在最底部 */
-.card-content .btn {
+/* 統一 featured 區塊按鈕高度與寬度 */
+/* featured 區塊按鈕區塊靠底 */
+.card-content .btn-group {
+  margin-top: auto;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+.card-content .btn,
+.card-content .btn.outline {
   margin-top: 16px;
-  align-self: flex-start;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  flex: 1 1 0%;
+  text-align: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  transition: 0.25s;
+  max-width: 100%;
 }
 
+.card-content .btn.outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.card-content .btn.outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
 /* ============================================================
    CASE STUDIES / ILLUSTRATIONS
 ============================================================ */
