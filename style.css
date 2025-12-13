@@ -246,6 +246,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: 0.28s ease;
+  padding: 10px;
 }
 
 .card:hover {
