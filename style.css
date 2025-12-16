@@ -1,4 +1,3 @@
-
 /* ===============================
    RESET & BASE
 =============================== */
@@ -486,6 +485,7 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  padding-bottom: 20px;
   gap: 3rem;
 }
 
@@ -549,6 +549,60 @@ body {
 
 
 }
+
+/* Apply illustration section CSS to certificate section */
+.certificate .masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 24px;
+  justify-content: center;
+}
+
+.certificate .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: auto;
+}
+
+.certificate .card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Remove bottom spacing and adjust alignment */
+.certificate .card-content {
+  padding-bottom: 20px;
+  margin-bottom: 0;
+  justify-content: flex-start;
+}
+
+/* Increase card size */
+.certificate .card {
+  width: 320px; /* Slightly larger width */
+}
+
+.certificate .card-content {
+  padding: 24px; /* Increase internal spacing */
+}
+
+@media (max-width: 900px) {
+  .certificate .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .certificate .masonry {
+    column-count: 1;
+  }
+}
+
 /* ============================================================
    CONTACT
 ============================================================ */
