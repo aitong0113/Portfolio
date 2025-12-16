@@ -29,7 +29,7 @@
       }
     }
 
-    /* Certificate 區塊卡片三欄排版，卡片寬度大一點 */
+    /* Certificate 區塊卡片響應式調整，跟其他卡片一樣 */
     .certificate .masonry {
       display: grid;
       grid-template-columns: 1fr;
@@ -43,22 +43,20 @@
       }
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 900px) {
       .certificate .masonry {
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: center;
-        align-items: start;
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
 
-    /* 讓所有卡片高度自動，內容多少就多高，不要配合左邊變長 */
     .certificate .masonry .card {
       width: 100%;
-      max-width: 380px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
       height: auto;
       align-self: start;
+      box-sizing: border-box;
     }
 
     /* 圖片若有固定高度，建議移除或設為自適應 */
