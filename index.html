@@ -12,6 +12,102 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* 主要內容區塊左右間距 */
+    .certificate,
+    .featured,
+    .illustration {
+      padding-inline: 16px;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .certificate,
+      .featured,
+      .illustration {
+        padding-inline: 32px;
+      }
+    }
+
+    /* Certificate 區塊卡片三欄排版，卡片寬度大一點 */
+    .certificate .masonry {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 0;
+    }
+
+    @media (min-width: 600px) {
+      .certificate .masonry {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .certificate .masonry {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: start;
+      }
+    }
+
+    /* 讓所有卡片高度自動，內容多少就多高，不要配合左邊變長 */
+    .certificate .masonry .card {
+      width: 100%;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      align-self: start;
+    }
+
+    /* 圖片若有固定高度，建議移除或設為自適應 */
+    .certificate .masonry .card img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* 證書區塊標題、內文、標籤行高調整 */
+    .certificate .section-title {
+      line-height: 1.25;
+      margin-bottom: 0.5em;
+    }
+
+    .certificate .section-subtitle {
+      line-height: 1.7;
+      margin-bottom: 2em;
+    }
+
+    .certificate .card-content h3 {
+      line-height: 1.35;
+      margin-bottom: 0.6em;
+    }
+
+    .certificate .card-content p {
+      line-height: 1.8;
+      margin-bottom: 1.2em;
+    }
+
+    .certificate .tags {
+      line-height: 1.4;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+
+    .certificate .tag {
+      line-height: 1.7;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+  </style>
 </head>
 
 <body>
@@ -152,23 +248,6 @@
         </div>
       </div>
 
-      <div class="card">
-        <img src="images/hex-RWD.png" alt="Google UX Design">
-        <div class="card-content">
-          <h3>Responsive Web Design (RWD)</h3>
-          <p>完成六角學院「一變應萬變的響應式網頁設計」課程，
-            學習 RWD 核心概念與實作方法，能因應不同裝置與螢幕尺寸，
-            設計具備一致體驗與良好結構的前端版型。</p>
-          <div class="tags">
-            <span class="tag">RWD</span>
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">SCSS</span>
-            <span class="tag">Frontend</span>
-            <span class="tag">六角學院</span>
-          </div>
-        </div>
-      </div>
 
       <div class="card">
         <img src="images/Google UX Design-1.png" alt="Google UX Design">
@@ -186,6 +265,44 @@
         </div>
       </div>
 
+      <div class="card">
+        <img src="images/Google UX Design-2.png" alt="Google UX Design Certificate">
+        <div class="card-content">
+          <h3>Start the UX Design Process: Empathize, Define, and Ideate</h3>
+          <p>
+            已完成 Google UX Design 專業證書第二門課，學習 UX 設計流程中的
+            Empathize、Define 與 Ideate 三大階段，透過使用者研究、問題定義與發想方法，
+            建立以使用者需求為核心的設計方向。
+          </p>
+          <div class="tags">
+            <span class="tag">UX Process</span>
+            <span class="tag">Empathize</span>
+            <span class="tag">Define</span>
+            <span class="tag">Ideation</span>
+            <span class="tag">User Research</span>
+            <span class="tag">Google 認證</span>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="images/hex-RWD.png" alt="Google UX Design">
+        <div class="card-content">
+          <h3>Responsive Web Design (RWD)</h3>
+          <p>完成六角學院「一變應萬變的響應式網頁設計」課程，
+            學習 RWD 核心概念與實作方法，能因應不同裝置與螢幕尺寸，
+            設計具備一致體驗與良好結構的前端版型。</p>
+          <div class="tags">
+            <span class="tag">RWD</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">SCSS</span>
+            <span class="tag">Frontend</span>
+            <span class="tag">六角學院</span>
+          </div>
+        </div>
+      </div>
 
 
     </div>

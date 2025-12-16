@@ -553,19 +553,19 @@ body {
 /* Apply illustration section CSS to certificate section */
 .certificate .masonry {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
-  gap: 24px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .certificate .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
   width: 100%;
-  max-width: 300px;
-  margin-bottom: auto;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .certificate .card img {
