@@ -749,3 +749,92 @@ body {
     max-width: 100%;
   }
 }
+
+/* 主要內容區塊左右間距 */
+.certificate,
+.featured,
+.illustration {
+  padding-inline: 16px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .certificate,
+  .featured,
+  .illustration {
+    padding-inline: 32px;
+  }
+}
+
+/* Certificate 區塊卡片響應式調整，跟其他卡片一樣 */
+.certificate .masonry {
+  break-inside: avoid;       /* 防止卡片被切開 */
+  margin-bottom: 24px;
+  display: inline-block;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .certificate .masonry {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .certificate .masonry {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.certificate .masonry .card {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  height: auto;
+  align-self: start;
+  box-sizing: border-box;
+}
+
+/* 圖片若有固定高度，建議移除或設為自適應 */
+.certificate .masonry .card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 證書區塊標題、內文、標籤行高調整 */
+.certificate .section-title {
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+.certificate .section-subtitle {
+  line-height: 1.7;
+  margin-bottom: 2em;
+}
+
+.certificate .card-content h3 {
+  line-height: 1.35;
+  margin-bottom: 0.6em;
+}
+
+.certificate .card-content p {
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+}
+
+.certificate .tags {
+  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.certificate .tag {
+  line-height: 1.7;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
