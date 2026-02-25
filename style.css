@@ -1,9 +1,28 @@
 /* ===============================
    RESET & BASE
 =============================== */
-*, *::before, *::after { box-sizing: border-box; }
-body, h1, h2, h3, h4, p { margin: 0; }
-img { display: block; width: 100%; border-radius: 12px; object-fit: cover; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 body {
   font-family: "Noto Sans TC", sans-serif;
   background: #f5f6f7;
@@ -17,7 +36,7 @@ body {
 =============================== */
 :root {
   --radius: 16px;
-  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   --primary: #a77a7a;
   --text-light: #666;
   --section-space: 80px;
@@ -32,6 +51,7 @@ body {
   font-weight: 700;
   margin-bottom: 32px;
 }
+
 .section-subtitle {
   text-align: center;
   font-size: 16px;
@@ -55,12 +75,17 @@ body {
   font-size: 15px;
   transition: 0.25s;
 }
-.btn:hover { opacity: 0.85; }
+
+.btn:hover {
+  opacity: 0.85;
+}
+
 .btn.outline {
   background: transparent;
   color: var(--primary);
   border: 2px solid var(--primary);
 }
+
 .btn.outline:hover {
   background: var(--primary);
   color: #fff;
@@ -75,9 +100,23 @@ body {
   background: #ffffff;
   border-bottom: 1px solid #e5e5e5;
 }
-.hero h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 12px; }
-.hero .role { font-size: 20px; color: var(--text-light); margin-bottom: 8px; }
-.hero .sub { font-size: 17px; color: #444; }
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 12px;
+}
+
+.hero .role {
+  font-size: 20px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.hero .sub {
+  font-size: 17px;
+  color: #444;
+}
+
 .hero-buttons {
   margin-top: 28px;
   display: flex;
@@ -148,26 +187,56 @@ body {
    RWD & MEDIA QUERIES
 =============================== */
 @media (max-width: 900px) {
-  .skills-grid.top-row { grid-template-columns: 1fr 1fr; }
-  .skills-grid.bottom-row { grid-template-columns: 1fr; }
-  .masonry { column-count: 2; }
-  .illustration .grid { column-count: 2; }
+  .skills-grid.top-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-grid.bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .masonry {
+    column-count: 2;
+  }
+
+  .illustration .grid {
+    column-count: 2;
+  }
 }
 
 @media (max-width: 768px) {
-  .about-wrapper { grid-template-columns: 1fr; text-align: center; }
-  .hero { padding: 80px 16px; }
-  .hero-buttons { flex-direction: column; }
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 80px 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
-  .skills-grid.top-row { grid-template-columns: 1fr; }
-  .masonry { column-count: 1; }
-  .illustration .grid { column-count: 1; }
+  .skills-grid.top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .masonry {
+    column-count: 1;
+  }
+
+  .illustration .grid {
+    column-count: 1;
+  }
+
   .card-content .btn-group {
     flex-direction: column;
     gap: 10px;
   }
+
   .card-content .btn,
   .card-content .btn.outline {
     width: 100%;
@@ -177,7 +246,10 @@ body {
 }
 
 @media (max-width: 480px) {
-  .section-subtitle { font-size: 15px; margin-bottom: 30px; }
+  .section-subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
 }
 
 /* ============================================================
@@ -222,20 +294,21 @@ body {
   background: #fff;
   padding: 28px 24px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   transition: 0.25s;
   text-align: center;
 }
 
 .skill-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
 }
 
 @media (max-width: 900px) {
   .skills-grid.top-row {
     grid-template-columns: 1fr 1fr;
   }
+
   .skills-grid.bottom-row {
     grid-template-columns: 1fr;
   }
@@ -265,6 +338,45 @@ body {
 /* ============================================================
    PROJECT CARD — 統一高度 + 標籤 + 按鈕貼底
 ============================================================ */
+.featured-card {
+  width: 100%;
+  margin: 0 auto 40px auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+
+  img {
+    height: 700px !important; /* 覆蓋原本的設定 */
+    object-fit: contain;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+
+.featured-card .tags {
+  display: flex;
+  justify-content: center;
+  /* 水平置中 */
+  gap: 10px;
+  flex-wrap: wrap;
+  /* 小螢幕會自動換行 */
+  margin-top: 10px;
+}
+
 
 /* 父層 GRID（你原本已設定，但補充保險） */
 .featured .grid {
@@ -277,7 +389,7 @@ body {
 .card {
   background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -287,7 +399,7 @@ body {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .card img {
@@ -397,7 +509,7 @@ body {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14);
 }
 
 .card img {
@@ -445,6 +557,7 @@ body {
   gap: 16px;
   justify-content: space-between;
 }
+
 .card-content .btn,
 .card-content .btn.outline {
   margin-top: 16px;
@@ -469,10 +582,12 @@ body {
   color: var(--primary);
   border: 2px solid var(--primary);
 }
+
 .card-content .btn.outline:hover {
   background: var(--primary);
   color: #fff;
 }
+
 /* ============================================================
    CASE STUDIES / ILLUSTRATIONS
 ============================================================ */
@@ -480,7 +595,8 @@ body {
    Illustration – Masonry Layout
 ================================ */
 .masonry {
-  column-count: 3;            /* 3 欄瀑布流 */
+  column-count: 3;
+  /* 3 欄瀑布流 */
   column-gap: 24px;
   max-width: 1200px;
   margin: auto;
@@ -490,7 +606,8 @@ body {
 }
 
 .masonry .card {
-  break-inside: avoid;       /* 防止卡片被切開 */
+  break-inside: avoid;
+  /* 防止卡片被切開 */
   margin-bottom: 24px;
   display: inline-block;
   width: 100%;
@@ -518,18 +635,21 @@ body {
 }
 
 .illustration .grid {
-  column-count: 3;          /* ⭐ 3 欄瀑布流 */
+  column-count: 3;
+  /* ⭐ 3 欄瀑布流 */
   column-gap: 24px;
 }
 
 .illustration .card {
-  break-inside: avoid;      /* ⭐ 每張卡片不可被拆開 */
+  break-inside: avoid;
+  /* ⭐ 每張卡片不可被拆開 */
   margin-bottom: 24px;
 }
 
 .illustration .card img {
   width: 100%;
-  height: auto;             /* ⭐ 依照實際比例延伸，高度不被限制 */
+  height: auto;
+  /* ⭐ 依照實際比例延伸，高度不被限制 */
   object-fit: contain;
   border-radius: 12px;
 }
@@ -584,11 +704,13 @@ body {
 
 /* Increase card size */
 .certificate .card {
-  width: 320px; /* Slightly larger width */
+  width: 320px;
+  /* Slightly larger width */
 }
 
 .certificate .card-content {
-  padding: 24px; /* Increase internal spacing */
+  padding: 24px;
+  /* Increase internal spacing */
 }
 
 @media (max-width: 900px) {
@@ -637,6 +759,7 @@ body {
   opacity: 1;
   margin-left: 8px;
 }
+
 /* Contact 區 */
 .contact {
   text-align: center;
@@ -678,11 +801,13 @@ body {
   gap: 2rem;
   margin-bottom: 40px;
 }
+
 @media (max-width: 600px) {
   .contact-links {
     gap: 1.2rem;
     padding: 0 8px;
   }
+
   .contact-links a {
     flex: 1 1 120px;
     min-width: 100px;
@@ -732,6 +857,7 @@ body {
   .hero {
     padding: 80px 16px;
   }
+
   .hero-buttons {
     flex-direction: column;
   }
@@ -742,6 +868,7 @@ body {
     flex-direction: column;
     gap: 10px;
   }
+
   .card-content .btn,
   .card-content .btn.outline {
     width: 100%;
@@ -759,6 +886,7 @@ body {
 }
 
 @media (min-width: 768px) {
+
   .certificate,
   .featured,
   .illustration {
@@ -766,13 +894,6 @@ body {
   }
 }
 
-/* Certificate 區塊卡片響應式調整，跟其他卡片一樣 */
-.certificate .masonry {
-  break-inside: avoid;       /* 防止卡片被切開 */
-  margin-bottom: 24px;
-  display: inline-block;
-  width: 100%;
-}
 
 @media (min-width: 600px) {
   .certificate .masonry {
