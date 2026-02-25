@@ -345,7 +345,8 @@ body {
   text-align: center;
 
   img {
-    height: 700px !important; /* 覆蓋原本的設定 */
+    height: 700px !important;
+    /* 覆蓋原本的設定 */
     object-fit: contain;
   }
 
@@ -672,14 +673,20 @@ body {
 
 /* Apply illustration section CSS to certificate section */
 .certificate .masonry {
-  display: grid;
+  column-count: 3;
+  column-gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  box-sizing: border-box;
+
 }
+
+.certificate .masonry .card {
+  break-inside: avoid;
+  /* 防止卡片被切開 */
+  margin-bottom: 24px;
+  display: inline-block;
+  width: 100%;
+}
+
 
 .certificate .card {
   width: 100%;
